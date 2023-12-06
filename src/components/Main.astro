@@ -8,7 +8,8 @@ const { img, classNames } = Astro.props
 ---
 
 <main
-    class={`w-screen h-auto relative bg-center bg-cover bg-no-repeat bg-[url('${img}')] z-0 lg:h-screen pb-20 lg:pb-0 ${classNames} `}
+    class={`w-screen h-auto relative bg-center bg-cover bg-no-repeat z-0 lg:h-screen pb-20 lg:pb-0 ${classNames} `}
+    style={`background-image: url('${img}')`}
 >
     <slot />
 </main>

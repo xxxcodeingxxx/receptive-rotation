@@ -1,27 +1,7 @@
 let today = new Date();
 let futureDay = new Date(1706698800000);
-
 let vacayDays = futureDay - today;
 let days = (vacayDays = Math.round(vacayDays / 1000 / 60 / 60 / 24));
-let hours = today.setDate(futureDay.getHours() - today.getHours());
-
-let minutes;
-
-console.log(`Days: ${days}, Hours: ${hours}, Minutes: ${minutes}`);
-
-document.getElementById("days").innerHTML = days;
-document.getElementById("departDate").innerHTML = futureDay.toLocaleDateString(
-  "en-US",
-  {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-  }
-);
-
 let now = new Date();
 let sixAM = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 6, 0, 0);
 
@@ -33,12 +13,25 @@ if (now > sixAM) {
 let diffMs = sixAM - now; // difference in milliseconds
 let diffHrs = diffMs / (1000 * 60 * 60); // convert milliseconds to hours
 
-console.log(`Hours until 6AM: ${Math.round(diffHrs)}`);
-
 let ow = new Date();
 let inutes = now.getMinutes();
 let minutesUntilNextHour = 60 - inutes;
 
-console.log(`Minutes until next hour: ${minutesUntilNextHour}`);
 document.getElementById("minutes").innerHTML = minutesUntilNextHour;
 document.getElementById("hours").innerHTML = Math.round(diffHrs);
+document.getElementById("days").innerHTML = days;
+document.getElementById("departDate").innerHTML = futureDay.toLocaleDateString(
+  "en-US",
+  {
+    // weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+  }
+);
+
+setTimeout(function () {
+  location.reload();
+}, 60000);

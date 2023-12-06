@@ -1,0 +1,14 @@
+---
+export interface Props {
+    bgColor?: string
+    ClassNames?: string
+}
+
+const { bgColor = 'bg-muted-purple/75', ClassNames = 'mix-blend-multiply' } =
+    Astro.props
+---
+
+<div
+    class={`w-full h-full absolute top-0 left-0 z-10 ${bgColor} ${ClassNames} `}
+>
+</div>

@@ -1,0 +1,14 @@
+---
+export interface Props {
+    img: string
+    classNames?: string
+}
+
+const { img, classNames } = Astro.props
+---
+
+<main
+    class={`w-screen h-auto relative bg-center bg-cover bg-no-repeat bg-[url('${img}')] z-0 lg:h-screen pb-20 lg:pb-0 ${classNames} `}
+>
+    <slot />
+</main>

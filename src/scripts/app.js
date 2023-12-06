@@ -18,7 +18,7 @@ let inutes = now.getMinutes();
 let minutesUntilNextHour = 60 - inutes;
 
 document.getElementById("minutes").innerHTML = minutesUntilNextHour;
-document.getElementById("hours").innerHTML = Math.round(diffHrs);
+document.getElementById("hours").innerHTML = Math.trunc(diffHrs);
 document.getElementById("days").innerHTML = days;
 document.getElementById("departDate").innerHTML = futureDay.toLocaleDateString(
   "en-US",

@@ -19,7 +19,13 @@ let minutesUntilNextHour = 60 - inutes;
 
 document.getElementById("minutes").innerHTML = minutesUntilNextHour;
 document.getElementById("hours").innerHTML = Math.trunc(diffHrs);
-document.getElementById("days").innerHTML = days;
+if (hours === 24 || hours > 24) {
+  document.getElementById("days").innerHTML = days;
+} else {
+  document.getElementById("days").innerHTML = days - 1;
+}
+
+console.log(days);
 document.getElementById("departDate").innerHTML = futureDay.toLocaleDateString(
   "en-US",
   {

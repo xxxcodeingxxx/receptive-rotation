@@ -1,14 +1,12 @@
 ---
 export interface Props {
     img?: string
-    h1?: string
-    h1_2?: string
+    img_2?: string
 }
 
 const {
-    img = '/assets/SVG/logo.svg',
-    h1 = 'caribbean vacation',
-    h1_2 = 'countdown',
+    img = '/assets/SVG/new_logo_solid.svg',
+    img_2 = '/assets/SVG/words.svg',
 } = Astro.props
 ---
 
@@ -18,23 +16,15 @@ const {
             <img
                 src={img}
                 alt="Gradient Colored Palm Tree and Sun Logo."
-                class="w-[150px] h-auto"
+                class="w-[128px] hidden h-auto"
             />
         </div>
-        <div class="relative mx-auto mb-8">
-            <h1
-                class="text-6xl leading-[0.65] lg:text-8xl lg:leading-[.75] font-bold uppercase text-my-yellow text-center"
-            >
-                {h1}
-                <br class="hidden lg:block" />{h1_2}
-            </h1>
+        <div class="relative mx-auto w-full mb-8">
+            <img
+                class="w-full lg:w-1/2 h-auto relative mx-auto"
+                src={img_2}
+                alt="Caribbean Vacation Countdown"
+            />
         </div>
     </div>
 </div>
-<style>
-    h1 {
-        -webkit-text-stroke: 3px theme(colors.my-yellow);
-        -webkit-text-fill-color: rgba(255, 255, 255, 0.25);
-        transition: all 1s ease-in-out;
-    }
-</style>

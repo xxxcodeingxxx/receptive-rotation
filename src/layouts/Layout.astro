@@ -39,6 +39,8 @@ const { title, description, image = '/dpm-social.png' } = Astro.props
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
         <meta property="twitter:image" content={new URL(image, Astro.url)} />
+        <script is:inline src="../../node_modules/jquery/dist/jquery.min.js"
+        ></script>
     </head>
     <body>
         <slot />

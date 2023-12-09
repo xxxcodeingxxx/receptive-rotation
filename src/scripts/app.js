@@ -47,20 +47,22 @@ const sep = $('#seperator')
 const h3 = $('#h3')
 const depart = $('#departDate')
 const main = $('#mainBg')
+const logo = $('#logo')
 
 if (now.getDate() % 2 === 0) {
     bgColor.removeClass('bg-my-yellow/75 text-white')
-    bgColor.addClass('bg-my-purple/75 text-my-yellow')
+    bgColor.addClass('bg-orange-500/75 text-orange-200')
     sep.removeClass('border-my-purple opacity-25')
-    sep.addClass('border-my-yellow opacity-100')
+    sep.addClass('border-orange-200 opacity-100')
     h3.removeClass('text-my-purple/50')
-    h3.addClass('text-my-yellow')
+    h3.addClass('text-orange-200')
     depart.removeClass('text-my-purple/50')
-    depart.addClass('text-my-yellow')
+    depart.addClass('text-orange-200')
+    logo.attr('src', '/assets/SVG/words-orange.svg')
 
     $('#div_1, #div_2, #div_3').each(function () {
         $(this).removeClass('bg-my-purple/50')
-        $(this).addClass('bg-white/25')
+        $(this).addClass('bg-orange-200/25')
     })
 
     main.css('background-image', 'url("/assets/caribbeanIsland.jpg")')
@@ -77,6 +79,7 @@ if (day === 6 || day === 7) {
     h3.addClass('text-white/75')
     depart.removeClass('text-my-purple/50')
     depart.addClass('text-white/75')
+    logo.attr('src', '/assets/SVG/words-blue.svg')
 
     $('#div_1, #div_2, #div_3').each(function () {
         $(this).removeClass('bg-my-purple/50')

@@ -1,28 +1,18 @@
 ---
 export interface Props {
     img?: string
-    img_2?: string
 }
 
-const {
-    img = '/assets/SVG/new_logo_solid.svg',
-    img_2 = '/assets/SVG/words.svg',
-} = Astro.props
+const { img = '/assets/SVG/words.svg' } = Astro.props
 ---
 
 <div class="w-10/12 lg:w-11/12 h-auto py-8 relative z-20 mx-auto">
     <div class="grid grid-cols-1">
-        <div class="relative mx-auto mb-8 lg:mx-0">
-            <img
-                src={img}
-                alt="Gradient Colored Palm Tree and Sun Logo."
-                class="w-[128px] hidden h-auto"
-            />
-        </div>
         <div class="relative mx-auto w-full mb-8">
             <img
+                id="logo"
                 class="w-full lg:w-1/2 h-auto relative mx-auto"
-                src={img_2}
+                src={img}
                 alt="Caribbean Vacation Countdown"
             />
         </div>

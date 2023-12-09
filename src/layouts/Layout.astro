@@ -40,22 +40,17 @@ const { title, description, image = '/dpm-social.png' } = Astro.props
         <meta property="twitter:description" content={description} />
         <meta property="twitter:image" content={new URL(image, Astro.url)} />
         <script
-            is:inline
-            src="../../node_modules/jquery/dist/jquery.min.js"
-            <script
             src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
             integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
             crossorigin="anonymous"></script>
-         ></head
-    >
+    </head>
+    <body>
+        <slot />
+    </body>
+    <script>
+        import '../scripts/app.js'
+    </script>
 </html>
-<body>
-    <slot />
-</body>
-<script>
-    import '../scripts/app.js'
-</script>
-
 <style is:global>
     @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;900&display=swap');
 
